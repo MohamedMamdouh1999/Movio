@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <main>
-      <div className="pattern" />
-      <Outlet />
+      <div className="pattern"/>
+      <div className="wrapper">
+        <Outlet />
+      </div>
     </main>
   )
 };

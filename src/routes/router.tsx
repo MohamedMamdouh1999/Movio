@@ -1,8 +1,11 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
 import Home from "../pages/Home";
-import Details from "../pages/Details";
+import Spinner from "../components/Spinner";
+
+const MovieDetails = lazy(() => import("../pages/MovieDetails"));
 
 const router = createBrowserRouter([
   {
@@ -14,8 +17,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "details/:id",
-        element: <Details />
+        path: "movie/:id",
+        element: (
+          <Suspense fallback={<Spinner />}>
+            <MovieDetails />
+          </Suspense>
+        )
       }
     ]
   }
