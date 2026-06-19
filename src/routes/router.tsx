@@ -3,9 +3,9 @@ import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
 import Home from "../pages/Home";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/shared/Spinner";
 
-const MovieDetails = lazy(() => import("../pages/MovieDetails"));
+const Movie = lazy(() => import("../pages/Movie"));
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         path: "movie/:id",
         element: (
           <Suspense fallback={<Spinner />}>
-            <MovieDetails />
+            <Movie />
           </Suspense>
         )
       }

@@ -8,7 +8,7 @@ import useFetch from "../../hooks/useFetch";
 import type { IResponse } from "../../interfaces/response";
 import type { IMovie } from "../../interfaces/movie";
 
-import Spinner from "../Spinner";
+import Spinner from "../shared/Spinner";
 import MovieCard from "./MovieCard";
 
 const PopularMovies = () => {

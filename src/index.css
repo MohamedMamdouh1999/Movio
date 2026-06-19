@@ -181,19 +181,20 @@
             }
         }
 
-        .images {
+        .images-video {
             @apply flex items-center justify-center gap-x-[26px] mt-[30px];
 
             img {
                 @apply object-center object-cover rounded-[10px];
 
                 &:first-of-type {
-                    @apply max-w-[302px] max-h-[441px];
+                    @apply max-w-[302px] h-[441px];
                 }
+            }
 
-                &:last-of-type {
-                    @apply w-full max-h-[441px];
-                }
+            img:last-of-type,
+            iframe {
+                @apply w-full h-[441px] rounded-[10px];
             }
         }
 

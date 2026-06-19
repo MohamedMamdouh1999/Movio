@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import type { IMovie } from "../../interfaces/movie";
 
-import Image from "../Image";
+import Image from "../shared/Image";
 
 const MovieCard = memo(({ movie }: { movie: IMovie }) => {
     return (

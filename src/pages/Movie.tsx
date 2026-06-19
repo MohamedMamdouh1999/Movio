@@ -4,10 +4,11 @@ import useFetch from "../hooks/useFetch";
 
 import type { IMovie } from "../interfaces/movie";
 
-import Spinner from "../components/Spinner";
-import Image from "../components/Image";
+import Spinner from "../components/shared/Spinner";
+import Image from "../components/shared/Image";
+import MovieVideo from "../components/movie/MovieVideo";
 
-const MovieDetails = () => {
+const Movie = () => {
     const { id } = useParams();
     const { data, isLoading, error } = useFetch<IMovie>(id ? `movie/${id}?language=en-US` : '');
 
@@ -64,9 +65,9 @@ const MovieDetails = () => {
                                 </>
                             )}
                         </div>
-                        <div className="images">
+                        <div className="images-video">
                             <Image poster={data.poster_path} title={data.title} />
-                            <Image poster={data.backdrop_path} title={data.title} />
+                            <MovieVideo id={data.id} poster={data.backdrop_path} title={data.title} />
                         </div>
                         <ul className="content">
                             <li className="info">
@@ -194,4 +195,4 @@ const MovieDetails = () => {
     );
 }
 
-export default MovieDetails;
+export default Movie;

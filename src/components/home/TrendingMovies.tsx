@@ -5,7 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import type { IResponse } from "../../interfaces/response";
 import type { IMovie } from "../../interfaces/movie";
 
-import Image from "../Image";
+import Image from "../shared/Image";
 
 const TrendingMovies = () => {
     const { data } = useFetch<IResponse<IMovie[]>>("movie/top_rated?language=en-US&page=1");

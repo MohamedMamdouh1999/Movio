@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { SearchContext } from "../context/Search";
+import { SearchContext } from "../../context/Search";
 
 const Search = () => {
     const { searchTerm, setSearchTerm } = useContext(SearchContext);
