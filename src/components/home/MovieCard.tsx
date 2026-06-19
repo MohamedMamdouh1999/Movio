@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 import type { IMovie } from "../../interfaces/movie";
 
+import Image from "../Image";
+
 const MovieCard = memo(({ movie }: { movie: IMovie }) => {
     return (
         <li className="movie-card">
             <Link to={`/movie/${movie.id}`}>
-                <img loading="lazy" src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : '/no-image.png'} alt={movie.title} />
+                <Image poster={movie.poster_path} title={movie.title} />
                 <div className="mt-4">
                     <h3>{movie.title}</h3>
                     <div className="content">
