@@ -96,7 +96,7 @@
         }
     }
 
-    .popular-movies {
+    .upcoming-movies {
         @apply space-y-9;
 
         & ul {

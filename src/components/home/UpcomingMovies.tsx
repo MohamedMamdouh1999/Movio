@@ -11,19 +11,19 @@ import type { IMovie } from "../../interfaces/movie";
 import Spinner from "../shared/Spinner";
 import MovieCard from "./MovieCard";
 
-const PopularMovies = () => {
+const UpcomingMovies = () => {
     const { searchTerm } = useContext(SearchContext);
     const debouncedSearchTerm = useDebounceHook(searchTerm, 500);
     const getEndpoint = (): string => {
         if (debouncedSearchTerm.trim()) return `search/movie?query=${encodeURIComponent(debouncedSearchTerm)}&include_adult=false&language=en-US&page=1`;
-        return 'movie/popular?language=en-US&page=1';
+        return 'movie/upcoming?language=en-US&page=1';
     };
 
     const { data, isLoading, error } = useFetch<IResponse<IMovie[]>>(getEndpoint());
 
     return (
-        <section className={`popular-movies ${debouncedSearchTerm.trim() && 'mt-20'}`}>
-            <h2 className="text-gradient">{debouncedSearchTerm.trim() ? 'Search Results' : 'Popular'}</h2>
+        <section className={`upcoming-movies ${debouncedSearchTerm.trim() && 'mt-20'}`}>
+            <h2 className="text-gradient">{debouncedSearchTerm.trim() ? 'Search Results' : 'Upcoming'}</h2>
             {isLoading ? <Spinner /> : error ? <p className="text-red-500">{error}</p> : (
                 data && data.results && data.results.length > 0 ? (
                     <ul>
@@ -35,4 +35,4 @@ const PopularMovies = () => {
     )
 };
 
-export default PopularMovies;
+export default UpcomingMovies;

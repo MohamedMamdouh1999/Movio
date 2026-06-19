@@ -4,7 +4,7 @@ import { SearchContext } from "../context/Search";
 
 import Header from "../components/home/Header";
 import TrendingMovies from "../components/home/TrendingMovies";
-import PopularMovies from "../components/home/PopularMovies";
+import Upcoming from "../components/home/UpcomingMovies";
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -14,7 +14,7 @@ const Home = () => {
         <SearchContext.Provider value={contextValue}>
             <Header />
             {!searchTerm.trim() && <TrendingMovies />}
-            <PopularMovies />
+            <Upcoming />
         </SearchContext.Provider>
     )
 }

@@ -8,7 +8,7 @@ import type { IMovie } from "../../interfaces/movie";
 import Image from "../shared/Image";
 
 const TrendingMovies = () => {
-    const { data } = useFetch<IResponse<IMovie[]>>("movie/top_rated?language=en-US&page=1");
+    const { data } = useFetch<IResponse<IMovie[]>>("trending/movie/day?language=en-US&page=1");
 
     return (
         <>
